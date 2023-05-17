@@ -1,0 +1,14 @@
+def is_palindrome(word):
+    if len(word) <= 1:
+        return True
+    if word[0] != word[-1]:
+        return False
+    return is_palindrome(word[1:-1])
+
+Explanation:
+
+The function is_palindrome takes a string word as input.
+The first if statement checks if the length of the word is less than or equal to 1, in which case the word is a palindrome and the function returns True.
+The second if statement checks if the first and last characters of the word are not equal, in which case the word is not a palindrome and the function returns False.
+If the first and last characters of the word are equal, then the function calls itself recursively with the substring of the word from the second character to the second-last character (i.e., word[1:-1]).
+This process continues until the word is reduced to a single character or an empty string, at which point the function returns True (because all the characters have been matched and the word is a palindrome).
